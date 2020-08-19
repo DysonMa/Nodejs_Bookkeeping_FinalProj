@@ -2,7 +2,7 @@ const cross = document.querySelectorAll('#cross-family')
 const form = document.querySelector("#add-accounts-form");
 
 // 不確定port是否會在8888
-let port = process.env.PORT || 8888
+// let port = process.env.PORT || 8888
 
 // delete
 for(let i = 0 ; i < cross.length; i ++){
