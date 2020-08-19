@@ -1,6 +1,9 @@
 const cross = document.querySelectorAll('#cross-family')
 const form = document.querySelector("#add-accounts-form");
 
+// 不確定port是否會在8888
+let port = process.env.PORT || 8888
+
 // delete
 for(let i = 0 ; i < cross.length; i ++){
     cross[i].addEventListener('click', async (test) => {
@@ -9,7 +12,7 @@ for(let i = 0 ; i < cross.length; i ++){
         console.log(id);
 
         // call delete api
-        let apiUrl = `http://127.0.0.1:8888/BookKeeping_backend/API/deleteAccount?id=${id}`
+        let apiUrl = `https://nodejs-dysonma-finalproj.herokuapp.com/BookKeeping_backend/API/deleteAccount?id=${id}`
         let res = await fetch(apiUrl, {method:'GET'});
         let text = await res.text();
         console.log(text);
@@ -32,7 +35,7 @@ form.addEventListener('submit', async (e) => {
     price = form.price.value,
     category = form.category.value
 
-    let apiUrl = `http://127.0.0.1:8888/BookKeeping_backend/API/addAccount?item=${item}&account=${acc}&date=${date}&location=${loc}&price=${price}&category=${category}`
+    let apiUrl = `https://nodejs-dysonma-finalproj.herokuapp.com/BookKeeping_backend/API/addAccount?item=${item}&account=${acc}&date=${date}&location=${loc}&price=${price}&category=${category}`
     let res = await fetch(apiUrl, {method:'GET'});
     let text = await res.text();
     console.log(text);
