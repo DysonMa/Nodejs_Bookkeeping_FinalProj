@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <h1>MaDi's <br> Book Keeping <br> (Backend)</h1>
+    <body>
+        <div class="content">
+            <form id="add-accounts-form">
+                <input type="text" name="item" placeholder="輸入 Item">
+                <input type="text" name="date" placeholder="輸入 Date (ex: 2020/8/15)">
+                <input type="text" name="location" placeholder="輸入 Location">
+                <input type="float" name="price" placeholder="輸入 Price">
+                <select name="account" >
+                    <option value="none" selected disabled hidden> 輸入 Expense or Income </option>
+                    <option value="Expense"">支出(Expense)</option>
+                    <option value="Income">收入(Income)</option>
+                </select>
+                <select name="category" >
+                    <option value="none" selected disabled hidden> 輸入 Category </option>
+                    <option value="食物飲料"">食物飲料</option>
+                    <option value="娛樂">娛樂</option>
+                    <option value="居家費用">居家費用</option>
+                    <option value="學習">學習</option>
+                    <option value="交通運輸">交通運輸</option>
+                    <option value="薪資收入">薪資收入</option>
+                </select>
+                <br>
+                <button> 增加帳目 </button> 
+            </form>
+            <table id="acc-table" cellpadding="10" border="1" width="100%">
+                　<tr>
+                    <td>Item</td>
+                    <td>Expense/Income</td>
+                　  <td>Date</td>
+                    <td>Location</td>
+                    <td>Price</td>
+                    <td>Category</td>
+                    <td>Delete</td>
+                　</tr>
+                <% for(let i = 0 ; i < acc.length; i++) {%>
+                    <tr data-id= <%= acc[i].id %>>
+                        <td><%= acc[i].item %></td>
+                        <td><%= acc[i].account %></td>
+                        <td><%= acc[i].date %></td>
+                        <td><%= acc[i].location %></td>
+                        <td><%= acc[i].price %></td>
+                        <td><%= acc[i].category %></td>
+                        <td><div id="cross-family" cross-id="<%= acc[i].id %>">x</div></td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </body>
+    <script src="backend.js"></script>
+</html>

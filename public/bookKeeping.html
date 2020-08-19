@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <h1>MaDi's <br> Book Keeping <br> (Frontend)</h1>
+    <body>
+        <div class="content">
+            <form id="add-accounts-form">
+                <input type="text" name="item" placeholder="輸入 Item">
+                <input type="text" name="date" placeholder="輸入 Date (ex: 2020/8/15)">
+                <input type="text" name="location" placeholder="輸入 Location">
+                <input type="float" name="price" placeholder="輸入 Price">
+                <select name="account" >
+                    <option value="none" selected disabled hidden> 輸入 Expense or Income </option>
+                    <option value="Expense"">支出(Expense)</option>
+                    <option value="Income">收入(Income)</option>
+                </select>
+                <select name="category" >
+                    <option value="none" selected disabled hidden> 輸入 Category </option>
+                    <option value="食物飲料"">食物飲料</option>
+                    <option value="娛樂">娛樂</option>
+                    <option value="居家費用">居家費用</option>
+                    <option value="學習">學習</option>
+                    <option value="交通運輸">交通運輸</option>
+                    <option value="薪資收入">薪資收入</option>
+                </select>
+                <br>
+                <button> 增加帳目 </button> 
+            </form>
+            <table id="acc-table" cellpadding="10" border="1" width="100%">
+                　<tr>
+                　  <td>Item</td>
+                    <td>Expense/Income</td>
+                　  <td>Date</td>
+                    <td>Location</td>
+                    <td>Price</td>
+                    <td>Category</td>
+                    <td>Delete</td>
+                　</tr>
+            </table>
+        </div>
+    </body>
+    <!--在專案總覽旁邊的齒輪點選專案設定，找CDN的config-->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+
+    <!--額外加入這行-->
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration(私有的不能亂給人)
+    var firebaseConfig = {
+        apiKey: "AIzaSyCRS1rLxPbXKKjHmXAnwioFpAIt3qvjiSY",
+        authDomain: "nodejstest-58c75.firebaseapp.com",
+        databaseURL: "https://nodejstest-58c75.firebaseio.com",
+        projectId: "nodejstest-58c75",
+        storageBucket: "nodejstest-58c75.appspot.com",
+        messagingSenderId: "354096236837",
+        appId: "1:354096236837:web:03602895c20a21b5b8b2cc",
+        measurementId: "G-3QV6JRWD1J"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    const db = firebase.firestore();
+    </script>
+    <script src="frontend.js"></script>
+</html>

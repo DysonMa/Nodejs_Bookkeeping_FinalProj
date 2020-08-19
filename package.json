@@ -1,0 +1,27 @@
+{
+  "name": "final_proj",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DysonMa/Nodejs_FinalProj.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DysonMa/Nodejs_FinalProj/issues"
+  },
+  "homepage": "https://github.com/DysonMa/Nodejs_FinalProj#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "firebase": "^7.18.0"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "description": ""
+}
