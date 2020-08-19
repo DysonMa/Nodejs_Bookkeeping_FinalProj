@@ -23,6 +23,8 @@ app.set('view engine', 'ejs');
 
 app.get("/",(req,res) => {
     
+    console.log(process.env);
+
     pathname = path.join(__dirname, 'public');
     console.log(pathname);  // __dirname/public/example.html
     let options = {
