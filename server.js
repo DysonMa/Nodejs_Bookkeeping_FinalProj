@@ -103,7 +103,7 @@ app.get("/BookKeeping_backend/API/addAccount",async (req,res) => {
     //     ${price},
     //     ${category}`);
 
-    res.redirect("http://127.0.0.1:8888/BookKeeping_backend")
+    res.redirect("/BookKeeping_backend")
 
 })
 
@@ -114,7 +114,7 @@ app.get("/BookKeeping_backend/API/deleteAccount",async(req,res) => {
     console.log(req.query.id);
     res.send(`delete account id = ${req.query.id}!`)
 
-    res.redirect("http://127.0.0.1:8888/BookKeeping_backend")
+    res.redirect("/BookKeeping_backend")
     
 })
 
@@ -127,7 +127,9 @@ app.get('*', (req, res) => {
 // 不確定port是否會在8888
 let port = process.env.PORT || 8888
 
+console.log(process.env);
+
 
 app.listen(port, () => {
-    console.log("Server is running at http://127.0.0.1:8888")
+    console.log(`Server is running at ${port}`)
 });
