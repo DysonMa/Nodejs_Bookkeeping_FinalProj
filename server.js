@@ -103,7 +103,7 @@ app.get("/BookKeeping_backend/API/addAccount",async (req,res) => {
     //     ${price},
     //     ${category}`);
 
-    res.redirect("/BookKeeping_backend")
+    res.redirect("https://nodejs-dysonma-finalproj.herokuapp.com/BookKeeping_backend")
 
 })
 
@@ -114,7 +114,7 @@ app.get("/BookKeeping_backend/API/deleteAccount",async(req,res) => {
     console.log(req.query.id);
     res.send(`delete account id = ${req.query.id}!`)
 
-    res.redirect("/BookKeeping_backend")
+    res.redirect("https://nodejs-dysonma-finalproj.herokuapp.com/BookKeeping_backend")
     
 })
 
